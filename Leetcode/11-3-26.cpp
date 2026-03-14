@@ -30,6 +30,20 @@ unordered_map<int,int> pr(vector<int>&v){
     return mp;
 }
 
+vector<int>solve(vector<int>&v){
+    int n =v.size();
+    int k=0;
+    int l = n-1;
+    int count = 0;
+    sort(v.begin(),v.end()); //2,2,3,3,4
+    vector<int>tmp(n);
+    for(int i=0;i<n;i++){
+       if(i!=v[i]){
+        tmp.push_back(i);
+       }
+    }
+    return tmp;
+}
 
 void pmap(unordered_map<int,int>&mp){
     for(auto i : mp){
@@ -39,9 +53,10 @@ void pmap(unordered_map<int,int>&mp){
 }
 int main(){
     vector<int> v = {2,4,2,3,2,3};
-    // vector<int> k = pr(v);
-    // print(k);
-    unordered_map<int,int>mp = pr(v);
-    pmap(mp);
+    vector<int> k = solve(v);
+    print(k);
+    // unordered_map<int,int>mp = pr(v);
+    // pmap(mp);
+
     
 }
