@@ -24,10 +24,6 @@ void recursiveSubset(vector<int>&v,vector<int>ans,int i){
 
 }
 
-// Subset 2
-void recursiveSubset2(vector<int>&v,vector<int>&ans,int i){
-    int j 
-}
 
 void printList(vector<vector<int>>&vec){
     for(auto i : vec){
