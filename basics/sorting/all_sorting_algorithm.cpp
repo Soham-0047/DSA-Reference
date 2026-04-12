@@ -19,7 +19,7 @@ void bubbleSort(vector<int>&v){
 
 
 // Insertion Sort
-
+// T.C= O(n^2) and best case (n)  and S.C = O(1) Stable
 void insertion_sort(vector<int>&v){
     int n = v.size();
     for(int i=1; i<n;i++){
@@ -33,6 +33,22 @@ void insertion_sort(vector<int>&v){
     }
 }
 
+// Selection sort
+// T.c = O(n^2) and S.C = O(1)
+void selection_sort(vector<int>&v){
+    int n = v.size();
+    for(int i=0;i<n-1;i++){
+        int min_in = i;
+
+        for(int j=i+1;j<n;j++){
+            if(v[j] < v[min_in]) min_in = j;
+        }
+        swap(v[i],v[min_in]);
+    }
+}
+
+
+// 
 void vp(vector<int>&v)
 {
     for(int i: v){
@@ -45,6 +61,7 @@ int main(){
     vector<int> v = {64,7,70,12,90,3};
     // bubbleSort(v);
     // insertion_sort(v);
+    selection_sort(v);
     vp(v);
     return 0;
 }
