@@ -110,7 +110,59 @@ void mergeSort(vector<int>&v,int l, int r){
 
 
 // Quick sort
+// 10,7,8,9,1
+// pivot -> 1
+/*
+i = low-1  -> -1 ;
+pivot = 1
 
+j=low  ->  j=high-1 : 
+    if(v[j] < pivot)
+       i++;
+       swap
+----
+j=1:
+7<1 no -> increment j
+
+---
+j=2
+8<1 no -> increment j
+
+--
+j=3
+9<1 no -> increment j
+--
+
+swap()
+if(7<)
+*/
+
+int partition(vector<int>&v,int l,int h){
+
+    int p = v[h];
+
+    int i = l-1; //-1
+
+    for(int j=l;j<=h-1;j++){
+        if(v[j] < p) {
+            i++;
+            swap(v[i],v[j]);
+        }
+    }
+
+    // 
+    swap(v[i+1], v[h]);
+
+    return i+1;
+}
+
+void quickSort(vector<int>&v,int l,int h){
+    if(l<h){
+        int pi = partition(v,l,h);
+        quickSort(v,l,pi-1);
+        quickSort(v,pi+1,h);
+    }
+}
 
 // print the list
 void vp(vector<int>&v)
@@ -127,7 +179,7 @@ int main(){
     // bubbleSort(v);
     // insertion_sort(v);
     // mergeSort(v,0,n-1);
-
+    quickSort(v,0,n-1);
     vp(v);
     return 0;
 }
