@@ -55,10 +55,22 @@ void print(vector<vector<string>>&v){
         cout<<endl;
     }
 }
+
+void printString(vector<string>&v){
+
+    for(auto i: v){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+}
 int main(){
 
     vector<string>arr = {"eat","tea","tan","ate","nat","bat"};
     vector<vector<string>>v = anaGram(arr);
-    print(v);
+    // print(v);
+    vector<string> v1 = {"wat"};
+    sort(v1[0].begin(), v1[0].end());
+    printString(v1);
 
+    return 0;
 }
